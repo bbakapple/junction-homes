@@ -1,5 +1,9 @@
-import Image from "next/image";
+import Icon from '@/components/icon'
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <Icon name="checkbox-off" onClick={() => {}} />
+    </div>
+  )
 }
