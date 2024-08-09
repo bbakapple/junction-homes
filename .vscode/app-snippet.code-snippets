@@ -5,6 +5,7 @@
 		"\"use client\"",
 		"import { cn } from '@/utils/cn'",
 		"import  { HTMLAttributes } from 'react'",
+		"",
 		"interface Props extends HTMLAttributes<HTMLDivElement> {",
 		" $1",
 		"}",
@@ -21,6 +22,7 @@
 		"body": [
 		"import { cn } from '@/utils/cn'",
 		"import  { HTMLAttributes } from 'react'",
+		"",
 		"interface Props extends HTMLAttributes<HTMLDivElement> {",
 		" $1",
 		"}",
