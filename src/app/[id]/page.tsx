@@ -39,8 +39,8 @@ export default function TeatPage({ params: { id } }: Props) {
           <div className="border-[0.8px] border-[#D5D5D5] mt-[4px]" />
         </div>
 
-        <div className="pl-[27px] flex text-body-regular-14 text-nowrap items-center">
-          <div className="w-[120px]">
+        <div className="flex text-body-regular-14 text-nowrap items-center pt-[8px]">
+          <div className="w-[120px] pl-[24px]">
             <AccidentStatus status={caseStatus} />
           </div>
           <div className="flex-1 line-clamp-1">{location}</div>
