@@ -7,22 +7,24 @@ import { getGoldenTime } from '@/utils/date'
 import dayjs from 'dayjs'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  date: Date
+  date: Date,
+  isDone?:boolean
 }
 
-export const GoldenTime = ({ className, date }: Props) => {
+export const GoldenTime = ({ className, date, isDone }: Props) => {
   const [remainTime, setRemainTime] = useState('')
   const isFinish = useMemo(() => (remainTime === '00:00:00'), [remainTime])
-  const level = useMemo(() => (Number((Number(remainTime.split(':')[0]) / 10).toFixed(1))), [remainTime])
+  const level = useMemo(() => (Number((Number(remainTime.split(':')[0]) / 10))), [remainTime])
 
   const bgColor = useMemo(() => {
     if (isFinish) return 'bg-gray-3'
-    if (level === 0) return 'bg-red'
-    if (level === 1) return 'bg-blue'
+    if (level < 1) return 'bg-red'
+    if (level < 2) return 'bg-blue'
     else return 'bg-gray-5'
   }, [isFinish, level])
 
   useEffect(() => {
+    if (isDone) return setRemainTime('00:00:00')
     const updateTime = () => {
       setRemainTime(getGoldenTime(dayjs(date).add(2, 'day').toDate(), { fullDeploy: true }))
     }

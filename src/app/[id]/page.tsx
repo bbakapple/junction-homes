@@ -18,7 +18,7 @@ export default function TeatPage({params: {id}}:Props) {
       <Image src={MapInmage} alt="지도" fill className="size-full object-cover" />
       <CapturedPoint captures={points} />
 
-      <div className="absolute z-50 left-[442px] top-[32px] bg-white py-[20px] rounded-[12px]">
+      <div className="absolute z-50 left-[442px] top-[32px] bg-white py-[20px] rounded-[12px] w-[calc(100%-484px)]">
         <div>
           <div className="flex text-body-bold-14 text-gray-5 text-nowrap">
             <div className="pl-[24px] w-[120px]">Status</div>
