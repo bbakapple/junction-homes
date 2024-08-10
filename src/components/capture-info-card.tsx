@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   isTop: boolean
 }
 
-export const CaptureInfoBox = ({
+export const CaptureInfoCard = ({
   className,
   capture: { imageUrl, time, gps, accuracy },
   isTop,
