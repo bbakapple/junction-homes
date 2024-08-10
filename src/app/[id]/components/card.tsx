@@ -16,7 +16,7 @@ export const Card = ({ id, accident }: Props) => {
       replace={true}
       className={cn(
         'rounded-[12px] px-[20px] py-[28px] bg-white shadow-card ml-[35px] mr-[30px] relative',
-        accident.charge && 'pb-[13px]'
+        accident.charge && 'pb-[13px]',
       )}
     >
       <div className="flex gap-[17px] *:h-[70px]">

@@ -19,9 +19,29 @@ export const CaptureInfoBigCard = ({
 }: Props) => {
   return (
     <PopOver className={cn(className, 'text-white', 'w-[450px]')}>
-      {isEven ? 
-      <ZoomImage className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')} src={imageUrl} width={450} height={450 * 288 / 549} targetX={-48} targetY={130} maxZoom={3} duration={1500}/> : 
-      <ZoomImage className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')} src={imageUrl} width={450} height={450 * 288 / 549} targetX={123} targetY={130} maxZoom={3} duration={1500}/>}
+      {isEven ? (
+        <ZoomImage
+          className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')}
+          src={imageUrl}
+          width={450}
+          height={(450 * 288) / 549}
+          targetX={-48}
+          targetY={130}
+          maxZoom={3}
+          duration={1500}
+        />
+      ) : (
+        <ZoomImage
+          className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')}
+          src={imageUrl}
+          width={450}
+          height={(450 * 288) / 549}
+          targetX={123}
+          targetY={130}
+          maxZoom={3}
+          duration={1500}
+        />
+      )}
       <div
         className={cn(
           'bg-[#202224cc]',
@@ -31,24 +51,26 @@ export const CaptureInfoBigCard = ({
           'divide-y-[1.5px]',
           'divide-dashed',
           'divide-[#ffffff33]',
-          'rounded-b-[10px]'
+          'rounded-b-[10px]',
         )}
       >
         <div className="flex justify-between">
           <div>Accuracy</div>
           <div className="flex gap-[4px]">
             <div className="text-green">{accuracy}%</div>
-            {isTop &&<div
-              className={cn(
-                'bg-red',
-                'py-[2px]',
-                'px-[3px]',
-                'rounded-[2px]',
-                'text-caption-bold-9',
-              )}
-            >
-              Top
-            </div>}
+            {isTop && (
+              <div
+                className={cn(
+                  'bg-red',
+                  'py-[2px]',
+                  'px-[3px]',
+                  'rounded-[2px]',
+                  'text-caption-bold-9',
+                )}
+              >
+                Top
+              </div>
+            )}
           </div>
         </div>
         <div className="flex justify-between">

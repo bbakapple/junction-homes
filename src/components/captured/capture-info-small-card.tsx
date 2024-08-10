@@ -25,7 +25,7 @@ export const CaptureInfoSmallCard = ({
           'py-[18px]',
           'px-[21px]',
           'gap-[15px]',
-          'rounded-[15px]'
+          'rounded-[15px]',
         )}
       >
         <div
@@ -47,7 +47,7 @@ export const CaptureInfoSmallCard = ({
             'divide-dashed',
             'divide-[#ffffff33]',
             'rounded-b-[10px]',
-            'grow'
+            'grow',
           )}
         >
           <div className="flex justify-between">
@@ -61,7 +61,7 @@ export const CaptureInfoSmallCard = ({
                     'py-[2px]',
                     'px-[3px]',
                     'rounded-[2px]',
-                    'text-caption-bold-9'
+                    'text-caption-bold-9',
                   )}
                 >
                   Top

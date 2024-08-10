@@ -14,7 +14,7 @@ const nextConfig = {
         hostname: 'cdn.pixabay.com',
         port: '',
       },
-    ]
+    ],
   },
 }
 

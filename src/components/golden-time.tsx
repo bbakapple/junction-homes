@@ -7,14 +7,14 @@ import { getGoldenTime } from '@/utils/date'
 import dayjs from 'dayjs'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  date: Date,
-  isDone?:boolean
+  date: Date
+  isDone?: boolean
 }
 
 export const GoldenTime = ({ className, date, isDone }: Props) => {
   const [remainTime, setRemainTime] = useState('')
-  const isFinish = useMemo(() => (remainTime === '00:00:00'), [remainTime])
-  const level = useMemo(() => (Number((Number(remainTime.split(':')[0]) / 10))), [remainTime])
+  const isFinish = useMemo(() => remainTime === '00:00:00', [remainTime])
+  const level = useMemo(() => Number(Number(remainTime.split(':')[0]) / 10), [remainTime])
 
   const bgColor = useMemo(() => {
     if (isFinish) return 'bg-gray-3'
@@ -36,11 +36,10 @@ export const GoldenTime = ({ className, date, isDone }: Props) => {
     return () => clearInterval(intervalId)
   }, [date])
 
-
   return (
     <div className={cn(className)}>
       <div className="w-[134px] h-[36px] rounded-[40px] py-[6px] pl-[10px] bg-[#EAEAEA] flex gap-[10px]">
-        <div className={cn('size-[24px]', 'rounded-full', bgColor,'flex-center')}>
+        <div className={cn('size-[24px]', 'rounded-full', bgColor, 'flex-center')}>
           <Icon name="clock" />
         </div>
         <div className="text-body-bold-14 text-gray-6">{remainTime}</div>
