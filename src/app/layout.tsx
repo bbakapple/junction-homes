@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { pretendard } from './fonts'
 import './globals.css'
+import { Sidebar } from '@/components/sidebar'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={pretendard.variable}>
-      <body className={pretendard.className}>{children}</body>
+      <body className={pretendard.className}>
+        <Sidebar />
+        {children}
+      </body>
     </html>
   )
 }
