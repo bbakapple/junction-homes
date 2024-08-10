@@ -4,7 +4,7 @@ export function getGoldenTime(
     fullDeploy: boolean
   } = {
     fullDeploy: false,
-  }
+  },
 ) {
   const now = new Date()
   const diff = date.getTime() - now.getTime()
