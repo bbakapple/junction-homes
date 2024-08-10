@@ -14,7 +14,7 @@ export const Sidebar = ({ className }: Props) => {
         className,
       )}
     >
-      <Link href='/'>
+      <Link href="/">
         <Logo className="absolute right-1/2 translate-x-1/2 top-[48px]" />
       </Link>
       <div className="flex flex-col justify-between h-full pb-[83px] pt-[208px]">
