@@ -1,8 +1,10 @@
 'use client'
 
 import { cn } from '@/utils/cn'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import Image from 'next/image'
-import { HTMLAttributes, useLayoutEffect, useState } from 'react'
+import { HTMLAttributes, useRef } from 'react'
 
 interface ZoomImageProps extends HTMLAttributes<HTMLDivElement> {
   src: string
@@ -24,34 +26,20 @@ const ZoomImage = ({
   duration,
   className,
 }: ZoomImageProps) => {
-  const [scale, setScale] = useState(1)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const imageRef = useRef<HTMLImageElement>(null)
 
-  useLayoutEffect(() => {
-    const startTime = Date.now()
-    const initialX = 0
-    const initialY = 0
-
-    const animate = () => {
-      const elapsedTime = Date.now() - startTime
-      const progress = Math.min(elapsedTime / duration, 1)
-
-      const easeProgress = easeOutCubic(progress)
-
-      const newScale = 1 + (maxZoom - 1) * easeProgress
-      const newX = initialX + (targetX - 50) * easeProgress
-      const newY = initialY + (targetY - 50) * easeProgress
-
-      setScale(newScale)
-      setPosition({ x: newX, y: newY })
-
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
+  useGSAP(() => {
+    if (imageRef.current) {
+      gsap.to(imageRef.current, {
+        scale: maxZoom,
+        x: (-(targetX - 50) * width) / 100,
+        y: ((targetY - 50) * height) / 100,
+        duration: duration / 1000,
+        ease: 'power3.inOut',
+        delay: 1,
+      })
     }
-
-    animate()
-  }, [targetX, targetY, maxZoom, duration])
+  }, [])
 
   return (
     <div
@@ -62,11 +50,11 @@ const ZoomImage = ({
       }}
     >
       <Image
+        ref={imageRef}
         src={src}
         fill
-        alt="Zooming image"
+        alt=""
         style={{
-          transform: `scale(${scale}) translate(${-position.x}%, ${-position.y}%)`,
           transformOrigin: 'center',
         }}
       />
@@ -75,7 +63,3 @@ const ZoomImage = ({
 }
 
 export default ZoomImage
-
-function easeOutCubic(t: number): number {
-  return 1 - Math.pow(1 - t, 3)
-}
