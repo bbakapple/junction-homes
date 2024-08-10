@@ -1,9 +1,10 @@
 'use client'
 
 import { cn } from '@/utils/cn'
-import { HTMLAttributes, useEffect, useState } from 'react'
+import { HTMLAttributes, useEffect, useMemo, useState } from 'react'
 import Icon from './icon'
 import { getGoldenTime } from '@/utils/date'
+import dayjs from 'dayjs'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   date: Date
@@ -11,10 +12,19 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 export const GoldenTime = ({ className, date }: Props) => {
   const [remainTime, setRemainTime] = useState('')
+  const isFinish = useMemo(() => (remainTime === '00:00:00'), [remainTime])
+  const level = useMemo(() => (Number((Number(remainTime.split(':')[0]) / 10).toFixed(1))), [remainTime])
+
+  const bgColor = useMemo(() => {
+    if (isFinish) return 'bg-gray-3'
+    if (level === 0) return 'bg-red'
+    if (level === 1) return 'bg-blue'
+    else return 'bg-gray-5'
+  }, [isFinish, level])
 
   useEffect(() => {
     const updateTime = () => {
-      setRemainTime(getGoldenTime(date, { fullDeploy: true }))
+      setRemainTime(getGoldenTime(dayjs(date).add(2, 'day').toDate(), { fullDeploy: true }))
     }
 
     updateTime()
@@ -24,10 +34,11 @@ export const GoldenTime = ({ className, date }: Props) => {
     return () => clearInterval(intervalId)
   }, [date])
 
+
   return (
     <div className={cn(className)}>
       <div className="w-[134px] h-[36px] rounded-[40px] py-[6px] pl-[10px] bg-[#EAEAEA] flex gap-[10px]">
-        <div className="size-[24px] rounded-full bg-red flex-center">
+        <div className={cn('size-[24px]', 'rounded-full', bgColor,'flex-center')}>
           <Icon name="clock" />
         </div>
         <div className="text-body-bold-14 text-gray-6">{remainTime}</div>

@@ -24,7 +24,7 @@ export interface MissingPerson {
   physicalFeature?: string
 }
 
-export type CaseStatus = 'notStart' | 'progress' | 'done'
+export type CaseStatus = 'doing' | 'yet' | 'done'
 
 export interface Police {
   name: string
@@ -33,13 +33,14 @@ export interface Police {
 }
 
 export interface MissingAccident {
-  caseNumber: number
+  caseNumber: string
   missingTime: Date
   location: string
   captured: Capture[]
   missingPerson: MissingPerson
   caseStatus: CaseStatus
   charge: Police | null
+  estimatedLocation: string
 }
 
 export type MissingAccidentList = MissingAccident[]

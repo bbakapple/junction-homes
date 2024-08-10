@@ -3,6 +3,8 @@ import { Filter } from '@/components/filter'
 import { GoldenTime } from '@/components/golden-time'
 import Icon from '@/components/icon'
 import { MissingRow } from '@/components/missing-row'
+import { missingAccidents } from '@/data/missing-accidents'
+import dayjs from 'dayjs'
 
 export default function Home() {
   return (
@@ -12,15 +14,11 @@ export default function Home() {
       <Filter className="mt-[24px]" />
 
       <div className="flex flex-col gap-[24px] pr-[68px] mt-[35px] max-h-[700px] overflow-y-auto *:shrink-0">
-        <MissingRow />
-        <MissingRow />
-        <MissingRow />
-        <MissingRow />
-        <MissingRow />
-        <MissingRow />
-        <MissingRow />
-        <MissingRow />
-        <MissingRow />
+        {
+          missingAccidents.map((accident)=> (
+            <MissingRow accident={accident}/>
+          ))
+        }
         <div className="pb-[300px]" />
       </div>
     </main>

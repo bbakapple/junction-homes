@@ -1,10 +1,14 @@
 import { HTMLAttributes } from 'react'
 import { AccidentStatus } from './accident-status'
 import { GoldenTime } from './golden-time'
+import { MissingAccident } from '@/app/types'
 
-interface Props {}
+interface Props {
+  accident: MissingAccident
+}
 
-export const MissingRow = ({}: Props) => {
+export const MissingRow = ({accident}: Props) => {
+  const {caseNumber, missingPerson, location, estimatedLocation, missingTime, caseStatus} = accident
   return (
     <div className="py-[26px] rounded-[12px] shadow-detail flex gap-[41px] overflow-hidden">
       <div className="flex gap-[17px] *:h-[70px] pl-[20px] *:shrink-0">
@@ -13,13 +17,13 @@ export const MissingRow = ({}: Props) => {
 
         <div className="flex flex-col justify-between h-full">
           <div>
-            <div className="text-gray-2 text-body-semibold-14">SB-202403028965</div>
-            <div className="text-body-bold-18 text-gray-5 mt-[-2px]">Jungwoo Ryoo</div>
+            <div className="text-gray-2 text-body-semibold-14">{caseNumber}</div>
+            <div className="text-body-bold-18 text-gray-5 mt-[-2px]">{missingPerson.name}</div>
           </div>
           <div className="flex text-body-regular-14 items-center">
-            <span>26yrs</span>
+            <span>{missingPerson.age}yrs</span>
             <div className="bg-gray-2 w-px mx-[8px] h-[60%]" />
-            <span>Male</span>
+            <span>{missingPerson.gender}</span>
           </div>
         </div>
       </div>
@@ -39,13 +43,13 @@ export const MissingRow = ({}: Props) => {
 
         <div className="pl-[27px] flex text-body-regular-14 text-nowrap items-center">
           <div className="w-[120px]">
-            <AccidentStatus status="yet" />
+            <AccidentStatus status={caseStatus} />
           </div>
-          <div className="flex-1 line-clamp-1">77, Cheongam-ro, Hyogok-dong</div>
-          <div className="flex-1 line-clamp-1">Black T-shirts & Pants</div>
-          <div className="flex-1 pr-[60px] line-clamp-1">11, Hyoja-ro 32beon-gil, Nam-gu</div>
+          <div className="flex-1 line-clamp-1">{location}</div>
+          <div className="flex-1 line-clamp-1">{missingPerson.signalment.join(', ')}</div>
+          <div className="flex-1 pr-[60px] line-clamp-1">{estimatedLocation}</div>
           <div className="w-[234px]">
-            <GoldenTime date={new Date('2024-08-13')} />
+            <GoldenTime date={missingTime} />
           </div>
         </div>
       </div>
