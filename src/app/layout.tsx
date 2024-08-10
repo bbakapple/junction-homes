@@ -3,6 +3,7 @@ import { pretendard } from './fonts'
 import './globals.css'
 import { Sidebar } from '@/components/sidebar'
 import { cn } from '@/utils/cn'
+import { Header } from '../components/header'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,8 +19,11 @@ export default function RootLayout({
     <html lang="ko" className={pretendard.variable}>
       <body className={cn(pretendard.className)}>
         <div className="flex">
-          <Sidebar />
-          {children}
+          <Sidebar className="fixed top-0" />
+          <div className="w-full relative pl-[106px]">
+            <Header className="sticky top-0" />
+            {children}
+          </div>
         </div>
       </body>
     </html>
