@@ -1,16 +1,21 @@
-import { HTMLAttributes } from 'react'
 import { AccidentStatus } from './accident-status'
 import { GoldenTime } from './golden-time'
 import { MissingAccident } from '@/app/types'
+import Link from 'next/link'
 
 interface Props {
+  id: number
   accident: MissingAccident
 }
 
-export const MissingRow = ({accident}: Props) => {
-  const {caseNumber, missingPerson, location, estimatedLocation, missingTime, caseStatus} = accident
+export const MissingRow = ({ id, accident }: Props) => {
+  const { caseNumber, missingPerson, location, estimatedLocation, missingTime, caseStatus } =
+    accident
   return (
-    <div className="py-[26px] rounded-[12px] shadow-detail flex gap-[41px] overflow-hidden">
+    <Link
+      href={`/${id}`}
+      className="py-[26px] rounded-[12px] shadow-detail flex gap-[41px] overflow-hidden"
+    >
       <div className="flex gap-[17px] *:h-[70px] pl-[20px] *:shrink-0">
         {/* IMAGE */}
         <div className="rounded-[8px] w-[70px] bg-primary-3" />
@@ -49,10 +54,10 @@ export const MissingRow = ({accident}: Props) => {
           <div className="flex-1 line-clamp-1">{missingPerson.signalment.join(', ')}</div>
           <div className="flex-1 pr-[60px] line-clamp-1">{estimatedLocation}</div>
           <div className="w-[234px]">
-            <GoldenTime date={missingTime} isDone={caseStatus === 'done'}/>
+            <GoldenTime date={missingTime} isDone={caseStatus === 'done'} />
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

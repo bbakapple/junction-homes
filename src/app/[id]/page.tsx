@@ -1,6 +1,6 @@
 import CapturedPoint from '@/components/captured/captured-point'
 import { missingAccidents } from '@/data/missing-accidents'
-import Image from 'next/image';
+import Image from 'next/image'
 import MapInmage from '@/assets/map.png'
 import { AccidentStatus } from '@/components/accident-status'
 import { GoldenTime } from '@/components/golden-time'
@@ -11,7 +11,7 @@ interface Props {
   }
 }
 
-export default function TeatPage({params: {id}}:Props) {
+export default function TeatPage({ params: { id } }: Props) {
   const points = missingAccidents[id].captured
   return (
     <div className="size-full relative">

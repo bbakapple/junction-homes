@@ -6,7 +6,7 @@ interface Props {}
 
 export const SideList = ({}: Props) => {
   return (
-    <div className="w-[400px] rounded-r-[12px] fixed top-0 left-[106px] overflow-hidden z-50 bg-white/90">
+    <div className="w-[400px] rounded-r-[12px] min-h-screen fixed top-0 left-[106px] overflow-hidden z-50 bg-white/90">
       <div className="pl-[35px] pt-[157px]">
         <div className="absolute top-[27px] left-[30px]">
           <Input />
@@ -18,16 +18,7 @@ export const SideList = ({}: Props) => {
       </div>
 
       <div className="mt-[24px] max-h-[725px] flex flex-col gap-[14px] overflow-y-scroll mr-[10px]">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card id={0} />
         <div className="pb-[260px]" />
       </div>
     </div>
