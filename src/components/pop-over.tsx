@@ -5,8 +5,8 @@ interface Props extends HTMLAttributes<HTMLDivElement> {}
 
 export const PopOver = ({ className, children }: Props) => {
   return (
-    <div className={cn(className, 'reative', 'backdrop-blur')}>
-      {children}
+    <div className={cn(className, 'reative')}>
+      <div className="backdrop-blur">{children}</div>
       <div className="w-full flex justify-center">
         <Triangle />
       </div>

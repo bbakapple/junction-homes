@@ -37,10 +37,15 @@ export default function TeatPage({ params: { id } }: Props) {
             <AccidentStatus status={missingAccident.caseStatus} />
           </div>
           <div className="flex-1 line-clamp-1">{missingAccident.location}</div>
-          <div className="flex-1 line-clamp-1">{missingAccident.missingPerson.signalment.join(', ')}</div>
+          <div className="flex-1 line-clamp-1">
+            {missingAccident.missingPerson.signalment.join(', ')}
+          </div>
           <div className="flex-1 pr-[60px] line-clamp-1">{missingAccident.estimatedLocation}</div>
           <div className="w-[234px] pr-[24px]">
-            <GoldenTime date={missingAccident.missingTime} isDone={missingAccident.caseStatus === 'done'} />
+            <GoldenTime
+              date={missingAccident.missingTime}
+              isDone={missingAccident.caseStatus === 'done'}
+            />
           </div>
         </div>
       </div>

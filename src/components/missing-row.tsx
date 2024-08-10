@@ -15,7 +15,7 @@ export const MissingRow = ({ id, accident }: Props) => {
     accident
   return (
     <Link
-      href={caseStatus !=='done' ?  `/${id}`: '/'}
+      href={caseStatus !== 'done' ? `/${id}` : '/'}
       className={cn(
         'py-[26px] rounded-[12px] flex gap-[41px] overflow-hidden',
         caseStatus === 'done' ? 'opacity-70 bg-gray-1' : 'shadow-detail',
