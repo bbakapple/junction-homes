@@ -10,7 +10,7 @@ export const Sidebar = ({ className }: Props) => {
     <div
       className={cn(
         'h-screen relative drop-shadow-lg w-[106px] border-r border-[#E8E8E8]',
-        className
+        className,
       )}
     >
       <Logo className="absolute right-1/2 translate-x-1/2 top-[48px]" />

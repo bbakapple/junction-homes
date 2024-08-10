@@ -3,11 +3,11 @@
 import { cn } from '@/utils/cn'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { HTMLAttributes, useRef } from 'react'
 
 interface ZoomImageProps extends HTMLAttributes<HTMLDivElement> {
-  src: string
+  src: string | StaticImageData
   width: number
   height: number
   targetX: number // %
@@ -36,7 +36,7 @@ const ZoomImage = ({
         y: ((targetY - 50) * height) / 100,
         duration: duration / 1000,
         ease: 'power3.inOut',
-        delay: 1,
+        delay: 0.5,
       })
     }
   }, [])
