@@ -4,7 +4,6 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import { HTMLAttributes } from 'react'
 import { PopOver } from '../pop-over'
-import smallImage from '@/assets/images/정우_small_2.png'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   capture: Capture
@@ -18,13 +17,28 @@ export const CaptureInfoSmallCard = ({
 }: Props) => {
   return (
     <PopOver className={cn(className, 'w-[220px]', 'text-white')}>
-      <div className={cn('flex', 'bg-[#202224cc]', 'items-center','py-[18px]', 'px-[21px]', 'gap-[15px]', 'rounded-[15px]')}>
-        <div className={cn(['w-[60px]', 'h-[60px]', 'bg-white', 'relative', 'rounded-[6px]', 'overflow-hidden'])}>
-        <Image
-          src={smallImage}
-          alt=""
-          fill
-        />
+      <div
+        className={cn(
+          'flex',
+          'bg-[#202224cc]',
+          'items-center',
+          'py-[18px]',
+          'px-[21px]',
+          'gap-[15px]',
+          'rounded-[15px]'
+        )}
+      >
+        <div
+          className={cn([
+            'w-[60px]',
+            'h-[60px]',
+            'bg-white',
+            'relative',
+            'rounded-[6px]',
+            'overflow-hidden',
+          ])}
+        >
+          <Image src={imageUrl} alt="" fill />
         </div>
         <div
           className={cn(
@@ -40,17 +54,19 @@ export const CaptureInfoSmallCard = ({
             <div>Accuracy</div>
             <div className="flex gap-[4px]">
               <div className="text-green">{accuracy}%</div>
-              {isTop &&<div
-                className={cn(
-                  'bg-red',
-                  'py-[2px]',
-                  'px-[3px]',
-                  'rounded-[2px]',
-                  'text-caption-bold-9',
-                )}
-              >
-                Top
-              </div>}
+              {isTop && (
+                <div
+                  className={cn(
+                    'bg-red',
+                    'py-[2px]',
+                    'px-[3px]',
+                    'rounded-[2px]',
+                    'text-caption-bold-9'
+                  )}
+                >
+                  Top
+                </div>
+              )}
             </div>
           </div>
           <div className="flex justify-between">
@@ -62,4 +78,3 @@ export const CaptureInfoSmallCard = ({
     </PopOver>
   )
 }
-

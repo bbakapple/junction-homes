@@ -1,6 +1,7 @@
 import { MissingAccident } from '@/app/types'
 import { AccidentStatus } from '@/components/accident-status'
 import { cn } from '@/utils/cn'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface Props {
@@ -19,8 +20,9 @@ export const Card = ({ id, accident }: Props) => {
       )}
     >
       <div className="flex gap-[17px] *:h-[70px]">
-        {/* IMAGE */}
-        <div className="rounded-[8px] w-[70px] bg-primary-3" />
+        <div className="rounded-[8px] w-[70px] overflow-hidden relative">
+          <Image src={accident.missingPerson.imageUrl} alt="" fill />
+        </div>
 
         <div className="flex flex-col justify-between h-full">
           <div>
@@ -40,8 +42,9 @@ export const Card = ({ id, accident }: Props) => {
       <AccidentStatus status={accident.caseStatus} className="top-[10px] right-[10px] absolute" />
       {accident.charge && (
         <div className="border-t-[2px] border-gray-1 pt-[10px] flex gap-[12px] items-center mt-[20px]">
-          {/* IMAGE */}
-          <div className="bg-primary-3 rounded-full size-[24px]" />
+          <div className="rounded-full size-[24px] relative overflow-hidden">
+            <Image src={accident.charge.profileImage} fill alt="" />
+          </div>
           <div className="flex gap-[5px] items-center">
             <div className="text-body-small-bold-12">PIC</div>
             <div className="text-body-small-regular-12">{accident.charge.name}</div>

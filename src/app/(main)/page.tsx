@@ -1,10 +1,6 @@
-import { AccidentStatus } from '@/components/accident-status'
 import { Filter } from '@/components/filter'
-import { GoldenTime } from '@/components/golden-time'
-import Icon from '@/components/icon'
 import { MissingRow } from '@/components/missing-row'
 import { missingAccidents } from '@/data/missing-accidents'
-import dayjs from 'dayjs'
 
 export default function Home() {
   return (

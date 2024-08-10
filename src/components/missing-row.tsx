@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { AccidentStatus } from './accident-status'
 import { GoldenTime } from './golden-time'
 import { MissingAccident } from '@/app/types'
@@ -18,7 +19,9 @@ export const MissingRow = ({ id, accident }: Props) => {
     >
       <div className="flex gap-[17px] *:h-[70px] pl-[20px] *:shrink-0">
         {/* IMAGE */}
-        <div className="rounded-[8px] w-[70px] bg-primary-3" />
+        <div className="rounded-[8px] w-[70px] overflow-hidden relative">
+          <Image src={missingPerson.imageUrl} fill alt="" />
+        </div>
 
         <div className="flex flex-col justify-between h-full">
           <div>
