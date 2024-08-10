@@ -4,14 +4,14 @@ export const MissingAccidents: MissingAccidentList = [
   {
     caseNumber: 12345,
     missingTime: new Date('2024-08-01T10:30:00Z'),
-    location: '경상북도 포항시 북구 장량동',
+    location: 'Jangryang-dong, Buk-gu, Pohang, Gyeongbuk',
     captured: [
       {
         imageUrl: 'https://example.com/captured1.jpg',
         time: new Date('2024-08-01T11:00:00Z'),
         coordinate: {
-          x: 35,
-          y: 60,
+          x: 30,
+          y: 40,
         },
         gps: {
           latitude: 36.01917,
@@ -23,8 +23,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured2.jpg',
         time: new Date('2024-08-01T11:30:00Z'),
         coordinate: {
-          x: 42,
-          y: 55,
+          x: 55,
+          y: 65,
         },
         gps: {
           latitude: 36.0201,
@@ -34,31 +34,31 @@ export const MissingAccidents: MissingAccidentList = [
       },
     ],
     missingPerson: {
-      name: '김철수',
+      name: 'Chulsoo Kim',
       imageUrl: 'https://example.com/kimchulsoo.jpg',
       age: 67,
       gender: 'male',
-      signalment: ['흰색 셔츠', '청바지', '검은 운동화'],
-      physicalFeature: '왼쪽 눈썹 위 흉터',
+      signalment: ['White shirt', 'Jeans', 'Black sneakers'],
+      physicalFeature: 'Scar above left eyebrow',
     },
     caseStatus: 'progress',
     charge: {
-      name: '박민수',
-      associate: '포항북부경찰서',
+      name: 'Minsoo Park',
+      associate: 'Bukbu Police Station, Pohang',
       profileImage: 'https://example.com/parkminsoo.jpg',
     },
   },
   {
     caseNumber: 67890,
     missingTime: new Date('2024-08-05T14:20:00Z'),
-    location: '경상북도 포항시 남구 대잠동',
+    location: 'Daejam-dong, Nam-gu, Pohang, Gyeongbuk',
     captured: [
       {
         imageUrl: 'https://example.com/captured3.jpg',
         time: new Date('2024-08-05T14:45:00Z'),
         coordinate: {
-          x: 50,
-          y: 40,
+          x: 20,
+          y: 30,
         },
         gps: {
           latitude: 35.97765,
@@ -70,8 +70,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured4.jpg',
         time: new Date('2024-08-05T15:15:00Z'),
         coordinate: {
-          x: 55,
-          y: 45,
+          x: 45,
+          y: 50,
         },
         gps: {
           latitude: 35.97821,
@@ -83,8 +83,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured5.jpg',
         time: new Date('2024-08-05T15:50:00Z'),
         coordinate: {
-          x: 58,
-          y: 43,
+          x: 70,
+          y: 70,
         },
         gps: {
           latitude: 35.97931,
@@ -94,32 +94,32 @@ export const MissingAccidents: MissingAccidentList = [
       },
     ],
     missingPerson: {
-      name: '이지은',
+      name: 'Jieun Lee',
       imageUrl: 'https://example.com/leejieun.jpg',
       age: 18,
       gender: 'female',
-      signalment: ['검은 티셔츠', '회색 스커트', '흰 운동화'],
-      disability: '청각 장애',
-      physicalFeature: '오른쪽 귀에 작은 점',
+      signalment: ['Black t-shirt', 'Gray skirt', 'White sneakers'],
+      disability: 'Hearing impairment',
+      physicalFeature: 'Small mole on right ear',
     },
     caseStatus: 'progress',
     charge: {
-      name: '정수현',
-      associate: '포항남부경찰서',
+      name: 'Suhyun Jung',
+      associate: 'Nambu Police Station, Pohang',
       profileImage: 'https://example.com/jungsuhyun.jpg',
     },
   },
   {
     caseNumber: 11223,
     missingTime: new Date('2024-08-03T08:15:00Z'),
-    location: '경상북도 포항시 남구 이동',
+    location: 'Idong, Nam-gu, Pohang, Gyeongbuk',
     captured: [
       {
         imageUrl: 'https://example.com/captured6.jpg',
         time: new Date('2024-08-03T08:45:00Z'),
         coordinate: {
-          x: 65,
-          y: 70,
+          x: 25,
+          y: 50,
         },
         gps: {
           latitude: 35.95513,
@@ -131,7 +131,7 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured7.jpg',
         time: new Date('2024-08-03T09:15:00Z'),
         coordinate: {
-          x: 68,
+          x: 50,
           y: 75,
         },
         gps: {
@@ -142,31 +142,31 @@ export const MissingAccidents: MissingAccidentList = [
       },
     ],
     missingPerson: {
-      name: '박영수',
+      name: 'Youngsoo Park',
       imageUrl: 'https://example.com/parkyoungsoo.jpg',
       age: 66,
       gender: 'male',
-      signalment: ['회색 후드티', '검은 청바지', '운동화'],
-      physicalFeature: '오른쪽 팔에 문신',
+      signalment: ['Gray hoodie', 'Black jeans', 'Sneakers'],
+      physicalFeature: 'Tattoo on right arm',
     },
     caseStatus: 'done',
     charge: {
-      name: '최준혁',
-      associate: '포항남부경찰서',
+      name: 'Junhyuk Choi',
+      associate: 'Nambu Police Station, Pohang',
       profileImage: 'https://example.com/choijunhyuk.jpg',
     },
   },
   {
     caseNumber: 33445,
     missingTime: new Date('2024-08-07T16:50:00Z'),
-    location: '경상북도 포항시 북구 환호동',
+    location: 'Hwanho-dong, Buk-gu, Pohang, Gyeongbuk',
     captured: [
       {
         imageUrl: 'https://example.com/captured8.jpg',
         time: new Date('2024-08-07T17:15:00Z'),
         coordinate: {
           x: 20,
-          y: 30,
+          y: 40,
         },
         gps: {
           latitude: 36.03512,
@@ -178,8 +178,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured9.jpg',
         time: new Date('2024-08-07T17:40:00Z'),
         coordinate: {
-          x: 25,
-          y: 35,
+          x: 50,
+          y: 65,
         },
         gps: {
           latitude: 36.03603,
@@ -191,8 +191,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured10.jpg',
         time: new Date('2024-08-07T18:10:00Z'),
         coordinate: {
-          x: 28,
-          y: 32,
+          x: 80,
+          y: 90,
         },
         gps: {
           latitude: 36.03758,
@@ -202,31 +202,31 @@ export const MissingAccidents: MissingAccidentList = [
       },
     ],
     missingPerson: {
-      name: '정예은',
+      name: 'Yeeun Jung',
       imageUrl: 'https://example.com/jungeun.jpg',
       age: 19,
       gender: 'female',
-      signalment: ['붉은 후드티', '검은 레깅스', '운동화'],
-      physicalFeature: '오른쪽 발목에 나비 문신',
+      signalment: ['Red hoodie', 'Black leggings', 'Sneakers'],
+      physicalFeature: 'Butterfly tattoo on right ankle',
     },
     caseStatus: 'notStart',
     charge: {
-      name: '김지훈',
-      associate: '포항북부경찰서',
+      name: 'Jihun Kim',
+      associate: 'Bukbu Police Station, Pohang',
       profileImage: 'https://example.com/kimjihun.jpg',
     },
   },
   {
     caseNumber: 55678,
     missingTime: new Date('2024-08-09T12:00:00Z'),
-    location: '경상북도 포항시 북구 송도동',
+    location: 'Songdo-dong, Buk-gu, Pohang, Gyeongbuk',
     captured: [
       {
         imageUrl: 'https://example.com/captured11.jpg',
         time: new Date('2024-08-09T12:30:00Z'),
         coordinate: {
-          x: 75,
-          y: 80,
+          x: 20,
+          y: 40,
         },
         gps: {
           latitude: 36.02495,
@@ -238,8 +238,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured12.jpg',
         time: new Date('2024-08-09T13:00:00Z'),
         coordinate: {
-          x: 78,
-          y: 85,
+          x: 50,
+          y: 60,
         },
         gps: {
           latitude: 36.02584,
@@ -251,8 +251,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured13.jpg',
         time: new Date('2024-08-09T13:30:00Z'),
         coordinate: {
-          x: 80,
-          y: 82,
+          x: 70,
+          y: 80,
         },
         gps: {
           latitude: 36.02672,
@@ -264,8 +264,8 @@ export const MissingAccidents: MissingAccidentList = [
         imageUrl: 'https://example.com/captured14.jpg',
         time: new Date('2024-08-09T14:00:00Z'),
         coordinate: {
-          x: 82,
-          y: 87,
+          x: 100,
+          y: 100,
         },
         gps: {
           latitude: 36.0276,
@@ -275,17 +275,17 @@ export const MissingAccidents: MissingAccidentList = [
       },
     ],
     missingPerson: {
-      name: '이성호',
+      name: 'Sungho Lee',
       imageUrl: 'https://example.com/leesungho.jpg',
       age: 66,
       gender: 'male',
-      signalment: ['파란 셔츠', '검은 바지', '검은 구두'],
-      physicalFeature: '오른쪽 검지 손가락 절단',
+      signalment: ['Blue shirt', 'Black pants', 'Black shoes'],
+      physicalFeature: 'Amputated right index finger',
     },
     caseStatus: 'progress',
     charge: {
-      name: '오승민',
-      associate: '포항북부경찰서',
+      name: 'Seungmin Oh',
+      associate: 'Bukbu Police Station, Pohang',
       profileImage: 'https://example.com/oseungmin.jpg',
     },
   },

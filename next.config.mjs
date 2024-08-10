@@ -1,7 +1,20 @@
+import { hostname } from 'os'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['example.com', 'cdn.pixabay.com'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '',
+        port: '3000',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+        port: '',
+      },
+    ]
   },
 }
 
