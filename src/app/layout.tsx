@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className={pretendard.variable}>
       <body className={cn(pretendard.className)}>
-        <div className="flex">
+        <div className="flex h-screen overflow-hidden">
           <Sidebar className="fixed top-0" />
           <div className="w-full relative pl-[106px]">
             <Header className="sticky top-0" />
