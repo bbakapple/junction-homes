@@ -65,7 +65,6 @@ const ZoomImage = ({
         src={src}
         fill
         alt="Zooming image"
-        className="transition-transform duration-100 ease-linear"
         style={{
           transform: `scale(${scale}) translate(${-position.x}%, ${-position.y}%)`,
           transformOrigin: 'center',
