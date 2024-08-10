@@ -78,6 +78,22 @@ const config: Config = {
         },
       ],
     },
+    colors: {
+      'primary-3': '#4880ff',
+      'gray-5': '#202224',
+      'gray-6': '#202224',
+      'gray-4': '#404040',
+      'gray-3': '#565656',
+      'gray-2': '#b0b0b0',
+      'gray-1': '#efefef',
+      red: '#ff4848',
+      blue: '#0054a6',
+      'primary-2': '#4870ff',
+      green: '#14ff00',
+      black: '#000000',
+      white: '#ffffff',
+      'primary-1': '#a2beff',
+    },
     extend: {
       boxShadow: {
         tab: '0px 8px 12px rgba(135, 145, 233, 0.3)',
