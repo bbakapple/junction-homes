@@ -1,17 +1,18 @@
-import { MissingAccidentList } from '@/app/types'
+import { MissingAccidentList } from "@/app/types";
 
-export const MissingAccidents: MissingAccidentList = [
+export const missingAccidents: MissingAccidentList = [
   {
-    caseNumber: 12345,
-    missingTime: new Date('2024-08-01T10:30:00Z'),
-    location: 'Jangryang-dong, Buk-gu, Pohang, Gyeongbuk',
+    caseNumber: 'SB-2024080912345',
+    missingTime: new Date('2024-08-09T10:30:00+09:00'), // 10:30 AM KST
+    location: '123-4, Jangryang-dong, Buk-gu',
+    estimatedLocation: '125-6, Jangryang-dong, Buk-gu',
     captured: [
       {
         imageUrl: 'https://example.com/captured1.jpg',
-        time: new Date('2024-08-01T11:00:00Z'),
+        time: new Date('2024-08-09T11:00:00+09:00'), // 11:00 AM KST
         coordinate: {
           x: 30,
-          y: 40,
+          y: 50,
         },
         gps: {
           latitude: 36.01917,
@@ -21,10 +22,10 @@ export const MissingAccidents: MissingAccidentList = [
       },
       {
         imageUrl: 'https://example.com/captured2.jpg',
-        time: new Date('2024-08-01T11:30:00Z'),
+        time: new Date('2024-08-09T11:30:00+09:00'), // 11:30 AM KST
         coordinate: {
           x: 55,
-          y: 65,
+          y: 70,
         },
         gps: {
           latitude: 36.0201,
@@ -41,24 +42,25 @@ export const MissingAccidents: MissingAccidentList = [
       signalment: ['White shirt', 'Jeans', 'Black sneakers'],
       physicalFeature: 'Scar above left eyebrow',
     },
-    caseStatus: 'progress',
+    caseStatus: 'doing',
     charge: {
       name: 'Minsoo Park',
-      associate: 'Bukbu Police Station, Pohang',
+      associate: 'Bukbu Police Station',
       profileImage: 'https://example.com/parkminsoo.jpg',
     },
   },
   {
-    caseNumber: 67890,
-    missingTime: new Date('2024-08-05T14:20:00Z'),
-    location: 'Daejam-dong, Nam-gu, Pohang, Gyeongbuk',
+    caseNumber: 'SB-2024081016789',
+    missingTime: new Date('2024-08-10T14:20:00+09:00'), // 2:20 PM KST
+    location: '56-78, Daejam-dong, Nam-gu',
+    estimatedLocation: '58-80, Daejam-dong, Nam-gu',
     captured: [
       {
         imageUrl: 'https://example.com/captured3.jpg',
-        time: new Date('2024-08-05T14:45:00Z'),
+        time: new Date('2024-08-10T14:45:00+09:00'), // 2:45 PM KST
         coordinate: {
-          x: 20,
-          y: 30,
+          x: 25,
+          y: 45,
         },
         gps: {
           latitude: 35.97765,
@@ -68,10 +70,10 @@ export const MissingAccidents: MissingAccidentList = [
       },
       {
         imageUrl: 'https://example.com/captured4.jpg',
-        time: new Date('2024-08-05T15:15:00Z'),
+        time: new Date('2024-08-10T15:15:00+09:00'), // 3:15 PM KST
         coordinate: {
           x: 45,
-          y: 50,
+          y: 65,
         },
         gps: {
           latitude: 35.97821,
@@ -81,10 +83,10 @@ export const MissingAccidents: MissingAccidentList = [
       },
       {
         imageUrl: 'https://example.com/captured5.jpg',
-        time: new Date('2024-08-05T15:50:00Z'),
+        time: new Date('2024-08-10T15:50:00+09:00'), // 3:50 PM KST
         coordinate: {
           x: 70,
-          y: 70,
+          y: 85,
         },
         gps: {
           latitude: 35.97931,
@@ -102,23 +104,24 @@ export const MissingAccidents: MissingAccidentList = [
       disability: 'Hearing impairment',
       physicalFeature: 'Small mole on right ear',
     },
-    caseStatus: 'progress',
+    caseStatus: 'doing',
     charge: {
       name: 'Suhyun Jung',
-      associate: 'Nambu Police Station, Pohang',
+      associate: 'Nambu Police Station',
       profileImage: 'https://example.com/jungsuhyun.jpg',
     },
   },
   {
-    caseNumber: 11223,
-    missingTime: new Date('2024-08-03T08:15:00Z'),
-    location: 'Idong, Nam-gu, Pohang, Gyeongbuk',
+    caseNumber: 'SB-2024081111223',
+    missingTime: new Date('2024-08-11T08:15:00+09:00'), // 8:15 AM KST
+    location: '45-6, Idong-dong, Nam-gu',
+    estimatedLocation: '50-8, Idong-dong, Nam-gu',
     captured: [
       {
         imageUrl: 'https://example.com/captured6.jpg',
-        time: new Date('2024-08-03T08:45:00Z'),
+        time: new Date('2024-08-11T08:45:00+09:00'), // 8:45 AM KST
         coordinate: {
-          x: 25,
+          x: 30,
           y: 50,
         },
         gps: {
@@ -129,10 +132,10 @@ export const MissingAccidents: MissingAccidentList = [
       },
       {
         imageUrl: 'https://example.com/captured7.jpg',
-        time: new Date('2024-08-03T09:15:00Z'),
+        time: new Date('2024-08-11T09:15:00+09:00'), // 9:15 AM KST
         coordinate: {
           x: 50,
-          y: 75,
+          y: 70,
         },
         gps: {
           latitude: 35.95687,
@@ -152,18 +155,19 @@ export const MissingAccidents: MissingAccidentList = [
     caseStatus: 'done',
     charge: {
       name: 'Junhyuk Choi',
-      associate: 'Nambu Police Station, Pohang',
+      associate: 'Nambu Police Station',
       profileImage: 'https://example.com/choijunhyuk.jpg',
     },
   },
   {
-    caseNumber: 33445,
-    missingTime: new Date('2024-08-07T16:50:00Z'),
-    location: 'Hwanho-dong, Buk-gu, Pohang, Gyeongbuk',
+    caseNumber: 'SB-2024081013345',
+    missingTime: new Date('2024-08-10T16:50:00+09:00'), // 4:50 PM KST
+    location: '34-12, Hwanho-dong, Buk-gu',
+    estimatedLocation: '35-14, Hwanho-dong, Buk-gu',
     captured: [
       {
         imageUrl: 'https://example.com/captured8.jpg',
-        time: new Date('2024-08-07T17:15:00Z'),
+        time: new Date('2024-08-10T17:15:00+09:00'), // 5:15 PM KST
         coordinate: {
           x: 20,
           y: 40,
@@ -176,10 +180,10 @@ export const MissingAccidents: MissingAccidentList = [
       },
       {
         imageUrl: 'https://example.com/captured9.jpg',
-        time: new Date('2024-08-07T17:40:00Z'),
+        time: new Date('2024-08-10T17:40:00+09:00'), // 5:40 PM KST
         coordinate: {
-          x: 50,
-          y: 65,
+          x: 40,
+          y: 60,
         },
         gps: {
           latitude: 36.03603,
@@ -189,10 +193,10 @@ export const MissingAccidents: MissingAccidentList = [
       },
       {
         imageUrl: 'https://example.com/captured10.jpg',
-        time: new Date('2024-08-07T18:10:00Z'),
+        time: new Date('2024-08-10T18:10:00+09:00'), // 6:10 PM KST
         coordinate: {
-          x: 80,
-          y: 90,
+          x: 60,
+          y: 80,
         },
         gps: {
           latitude: 36.03758,
@@ -209,84 +213,107 @@ export const MissingAccidents: MissingAccidentList = [
       signalment: ['Red hoodie', 'Black leggings', 'Sneakers'],
       physicalFeature: 'Butterfly tattoo on right ankle',
     },
-    caseStatus: 'notStart',
+    caseStatus: 'yet',
     charge: {
-      name: 'Jihun Kim',
-      associate: 'Bukbu Police Station, Pohang',
-      profileImage: 'https://example.com/kimjihun.jpg',
+      name: 'Jihoon Kim',
+      associate: 'Bukbu Police Station',
+      profileImage: 'https://example.com/kimjihoon.jpg',
     },
   },
   {
-    caseNumber: 55678,
-    missingTime: new Date('2024-08-09T12:00:00Z'),
-    location: 'Songdo-dong, Buk-gu, Pohang, Gyeongbuk',
+    caseNumber: 'SB-2024080915678',
+    missingTime: new Date('2024-08-09T13:00:00+09:00'), // 1:00 PM KST
+    location: '789-10, Songdo-dong, Buk-gu',
+    estimatedLocation: '790-11, Songdo-dong, Buk-gu',
     captured: [
       {
         imageUrl: 'https://example.com/captured11.jpg',
-        time: new Date('2024-08-09T12:30:00Z'),
+        time: new Date('2024-08-09T13:30:00+09:00'), // 1:30 PM KST
         coordinate: {
-          x: 20,
-          y: 40,
+          x: 75,
+          y: 80,
         },
         gps: {
-          latitude: 36.02495,
-          longitude: 129.34112,
+          latitude: 36.01234,
+          longitude: 129.34567,
         },
         accuracy: 98.0,
       },
       {
         imageUrl: 'https://example.com/captured12.jpg',
-        time: new Date('2024-08-09T13:00:00Z'),
+        time: new Date('2024-08-09T14:00:00+09:00'), // 2:00 PM KST
         coordinate: {
           x: 50,
           y: 60,
         },
         gps: {
-          latitude: 36.02584,
-          longitude: 129.34198,
+          latitude: 36.01345,
+          longitude: 129.34678,
         },
-        accuracy: 96.4,
-      },
-      {
-        imageUrl: 'https://example.com/captured13.jpg',
-        time: new Date('2024-08-09T13:30:00Z'),
-        coordinate: {
-          x: 70,
-          y: 80,
-        },
-        gps: {
-          latitude: 36.02672,
-          longitude: 129.34275,
-        },
-        accuracy: 97.3,
-      },
-      {
-        imageUrl: 'https://example.com/captured14.jpg',
-        time: new Date('2024-08-09T14:00:00Z'),
-        coordinate: {
-          x: 100,
-          y: 100,
-        },
-        gps: {
-          latitude: 36.0276,
-          longitude: 129.34361,
-        },
-        accuracy: 98.7,
+        accuracy: 95.2,
       },
     ],
     missingPerson: {
-      name: 'Sungho Lee',
-      imageUrl: 'https://example.com/leesungho.jpg',
-      age: 66,
+      name: 'Sungmin Choi',
+      imageUrl: 'https://example.com/choisungmin.jpg',
+      age: 25,
       gender: 'male',
-      signalment: ['Blue shirt', 'Black pants', 'Black shoes'],
-      physicalFeature: 'Amputated right index finger',
+      signalment: ['Blue shirt', 'Khaki pants', 'Brown shoes'],
+      physicalFeature: 'No distinguishing marks',
     },
-    caseStatus: 'progress',
+    caseStatus: 'doing',
     charge: {
-      name: 'Seungmin Oh',
-      associate: 'Bukbu Police Station, Pohang',
-      profileImage: 'https://example.com/oseungmin.jpg',
+      name: 'Seungmin Lee',
+      associate: 'Bukbu Police Station',
+      profileImage: 'https://example.com/leeseungmin.jpg',
     },
   },
-]
+  {
+    caseNumber: 'SB-2024081012345',
+    missingTime: new Date('2024-08-10T09:45:00+09:00'), // 9:45 AM KST
+    location: '321-8, Haeundae-dong, Haeundae-gu',
+    estimatedLocation: '321-10, Haeundae-dong, Haeundae-gu',
+    captured: [
+      {
+        imageUrl: 'https://example.com/captured13.jpg',
+        time: new Date('2024-08-10T10:15:00+09:00'), // 10:15 AM KST
+        coordinate: {
+          x: 60,
+          y: 80,
+        },
+        gps: {
+          latitude: 35.15809,
+          longitude: 129.16042,
+        },
+        accuracy: 94.0,
+      },
+      {
+        imageUrl: 'https://example.com/captured14.jpg',
+        time: new Date('2024-08-10T10:45:00+09:00'), // 10:45 AM KST
+        coordinate: {
+          x: 40,
+          y: 60,
+        },
+        gps: {
+          latitude: 35.15999,
+          longitude: 129.16132,
+        },
+        accuracy: 95.5,
+      },
+    ],
+    missingPerson: {
+      name: 'Minji Seo',
+      imageUrl: 'https://example.com/seominji.jpg',
+      age: 29,
+      gender: 'female',
+      signalment: ['Green dress', 'White sandals'],
+      physicalFeature: 'Freckles on face',
+    },
+    caseStatus: 'yet',
+    charge: {
+      name: 'Jiwon Han',
+      associate: 'Haeundae Police Station',
+      profileImage: 'https://example.com/hanjiwon.jpg',
+    },
+  }
+];

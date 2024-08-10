@@ -1,8 +1,9 @@
+import { CaseStatus } from '@/app/types'
 import { cn } from '@/utils/cn'
 import { HTMLAttributes } from 'react'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  status: 'doing' | 'yet' | 'done'
+  status: CaseStatus
 }
 
 export const AccidentStatus = ({ status, className }: Props) => {
