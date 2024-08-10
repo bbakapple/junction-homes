@@ -15,7 +15,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-[24px] pr-[68px] mt-[35px] max-h-[700px] overflow-y-auto *:shrink-0">
         {missingAccidents.map((accident, idx) => (
-          <MissingRow key={idx} accident={accident} />
+          <MissingRow key={idx} id={idx} accident={accident} />
         ))}
         <div className="pb-[300px]" />
       </div>

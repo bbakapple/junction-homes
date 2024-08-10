@@ -1,10 +1,17 @@
 import { AccidentStatus } from '@/components/accident-status'
+import Link from 'next/link'
 
-interface Props {}
+interface Props {
+  id: number
+}
 
-export const Card = ({}: Props) => {
+export const Card = ({ id }: Props) => {
   return (
-    <div className="rounded-[12px] px-[20px] py-[28px] bg-white shadow-card ml-[35px] mr-[30px] relative">
+    <Link
+      href={`/${id}`}
+      replace={true}
+      className="rounded-[12px] px-[20px] py-[28px] bg-white shadow-card ml-[35px] mr-[30px] relative"
+    >
       <div className="flex gap-[17px] *:h-[70px]">
         {/* IMAGE */}
         <div className="rounded-[8px] w-[70px] bg-primary-3" />
@@ -24,6 +31,6 @@ export const Card = ({}: Props) => {
 
       <AccidentStatus status="doing" className="top-[10px] right-[10px] absolute" />
       {true && <div></div>}
-    </div>
+    </Link>
   )
 }
