@@ -19,7 +19,7 @@ export const CaptureInfoBigCard = ({
 }: Props) => {
   return (
     <PopOver className={cn(className, 'text-white', 'w-[450px]')}>
-      <ZoomImage className='' src={bigImage} width={450} height={450 * 288 / 549} targetX={-50} targetY={130} maxZoom={3} duration={1500}/>
+      <ZoomImage className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')} src={bigImage} width={450} height={450 * 288 / 549} targetX={-48} targetY={130} maxZoom={3} duration={1500}/>
       <div
         className={cn(
           'bg-[#202224cc]',

@@ -13,7 +13,7 @@ export default function TeatPage({params: {id}}:Props) {
   const points = MissingAccidents[id].captured
   return (
   <div className='size-full relative'>
-    <Image src={MapInmage} alt='지도' fill className='size-full'/>
+    <Image src={MapInmage} alt='지도' fill className='size-full object-cover'/>
     <CapturedPoint captures={points} />
   </div>
   )
