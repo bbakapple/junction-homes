@@ -1,16 +1,22 @@
+import { MissingAccident } from '@/app/types'
 import { AccidentStatus } from '@/components/accident-status'
+import { cn } from '@/utils/cn'
 import Link from 'next/link'
 
 interface Props {
   id: number
+  accident: MissingAccident
 }
 
-export const Card = ({ id }: Props) => {
+export const Card = ({ id, accident }: Props) => {
   return (
     <Link
       href={`/${id}`}
       replace={true}
-      className="rounded-[12px] px-[20px] py-[28px] bg-white shadow-card ml-[35px] mr-[30px] relative"
+      className={cn(
+        'rounded-[12px] px-[20px] py-[28px] bg-white shadow-card ml-[35px] mr-[30px] relative',
+        accident.charge && 'pb-[13px]'
+      )}
     >
       <div className="flex gap-[17px] *:h-[70px]">
         {/* IMAGE */}
@@ -18,19 +24,30 @@ export const Card = ({ id }: Props) => {
 
         <div className="flex flex-col justify-between h-full">
           <div>
-            <div className="text-gray-2 text-body-semibold-14">SB-202403028965</div>
-            <div className="text-body-bold-18 text-gray-5 mt-[-2px]">Jungwoo Ryoo</div>
+            <div className="text-gray-2 text-body-semibold-14">{accident.caseNumber}</div>
+            <div className="text-body-bold-18 text-gray-5 mt-[-2px]">
+              {accident.missingPerson.name}
+            </div>
           </div>
           <div className="flex text-body-regular-14 items-center">
-            <span>26yrs</span>
+            <span>{accident.missingPerson.age}yrs</span>
             <div className="bg-gray-2 w-px mx-[8px] h-[60%]" />
-            <span>Male</span>
+            <span>{accident.missingPerson.gender}</span>
           </div>
         </div>
       </div>
 
-      <AccidentStatus status="doing" className="top-[10px] right-[10px] absolute" />
-      {true && <div></div>}
+      <AccidentStatus status={accident.caseStatus} className="top-[10px] right-[10px] absolute" />
+      {accident.charge && (
+        <div className="border-t-[2px] border-gray-1 pt-[10px] flex gap-[12px] items-center mt-[20px]">
+          {/* IMAGE */}
+          <div className="bg-primary-3 rounded-full size-[24px]" />
+          <div className="flex gap-[5px] items-center">
+            <div className="text-body-small-bold-12">PIC</div>
+            <div className="text-body-small-regular-12">{accident.charge.name}</div>
+          </div>
+        </div>
+      )}
     </Link>
   )
 }
