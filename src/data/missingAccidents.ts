@@ -26,7 +26,8 @@ export const MissingAccidents: MissingAccidentList = [
     missingPerson: {
       name: '김철수',
       imageUrl: 'https://example.com/kimchulsoo.jpg',
-      age: 34,
+      age: 67,
+      gender: 'male',
       signalment: ['흰색 셔츠', '청바지', '검은 운동화'],
       physicalFeature: '왼쪽 눈썹 위 흉터',
     },
@@ -70,7 +71,8 @@ export const MissingAccidents: MissingAccidentList = [
     missingPerson: {
       name: '이지은',
       imageUrl: 'https://example.com/leejieun.jpg',
-      age: 28,
+      age: 18,
+      gender: 'female',
       signalment: ['검은 티셔츠', '회색 스커트', '흰 운동화'],
       disability: '청각 장애',
       physicalFeature: '오른쪽 귀에 작은 점',
@@ -107,7 +109,8 @@ export const MissingAccidents: MissingAccidentList = [
     missingPerson: {
       name: '박영수',
       imageUrl: 'https://example.com/parkyoungsoo.jpg',
-      age: 68,
+      age: 66,
+      gender: 'male',
       signalment: ['회색 후드티', '검은 청바지', '운동화'],
       physicalFeature: '오른쪽 팔에 문신',
     },
@@ -152,6 +155,7 @@ export const MissingAccidents: MissingAccidentList = [
       name: '정예은',
       imageUrl: 'https://example.com/jungeun.jpg',
       age: 19,
+      gender: 'female',
       signalment: ['붉은 후드티', '검은 레깅스', '운동화'],
       physicalFeature: '오른쪽 발목에 나비 문신',
     },
@@ -203,7 +207,8 @@ export const MissingAccidents: MissingAccidentList = [
     missingPerson: {
       name: '이성호',
       imageUrl: 'https://example.com/leesungho.jpg',
-      age: 65,
+      age: 66,
+      gender: 'male',
       signalment: ['파란 셔츠', '검은 바지', '검은 구두'],
       physicalFeature: '오른쪽 검지 손가락 절단',
     },

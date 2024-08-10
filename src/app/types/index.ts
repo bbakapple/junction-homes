@@ -12,7 +12,8 @@ export interface Capture {
 export interface MissingPerson {
   name: string
   imageUrl: string
-  age: number
+  age: number,
+  gender: string,
   signalment: string[]
   disability?: string
   physicalFeature?: string
