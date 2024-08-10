@@ -24,7 +24,7 @@ export const GoldenTime = ({ className, date, isDone }: Props) => {
   }, [isFinish, level])
 
   useEffect(() => {
-    if (isDone) return setRemainTime('00:00:00')
+    if (isDone || isFinish) return setRemainTime('00:00:00')
     const updateTime = () => {
       setRemainTime(getGoldenTime(dayjs(date).add(2, 'day').toDate(), { fullDeploy: true }))
     }

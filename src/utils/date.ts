@@ -9,6 +9,8 @@ export function getGoldenTime(
   const now = new Date()
   const diff = date.getTime() - now.getTime()
 
+  if (diff < 0 ) return '00:00:00'
+
   const msHour = 3600 * 1000
   const msMin = 60 * 1000
   const msSecond = 1000
