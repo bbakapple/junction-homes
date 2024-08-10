@@ -3,7 +3,7 @@ export interface Coordinate {
   y: number
 }
 
-export interface Captured {
+export interface Capture {
   imageUrl: string
   time: Date
   coordinate: Coordinate
@@ -30,7 +30,7 @@ export interface MissingAccident {
   caseNumber: number
   missingTime: Date
   location: string
-  captured: Captured[]
+  captured: Capture[]
   missingPerson: MissingPerson
   caseStatus: CaseStatus
   charge: Police | null
