@@ -1,6 +1,7 @@
 import { Filter } from '@/components/filter'
 import { Input } from '@/components/ui/input'
 import { Card } from './card'
+import { missingAccidents } from '@/data/missing-accidents'
 
 interface Props {}
 
@@ -18,7 +19,9 @@ export const SideList = ({}: Props) => {
       </div>
 
       <div className="mt-[24px] max-h-[725px] flex flex-col gap-[14px] overflow-y-scroll mr-[10px]">
-        <Card id={0} />
+        {missingAccidents.map((accident, idx) => (
+          <Card key={idx} id={idx} accident={accident} />
+        ))}
         <div className="pb-[260px]" />
       </div>
     </div>
