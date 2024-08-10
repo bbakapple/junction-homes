@@ -14,11 +14,9 @@ export default function Home() {
       <Filter className="mt-[24px]" />
 
       <div className="flex flex-col gap-[24px] pr-[68px] mt-[35px] max-h-[700px] overflow-y-auto *:shrink-0">
-        {
-          missingAccidents.map((accident)=> (
-            <MissingRow accident={accident}/>
-          ))
-        }
+        {missingAccidents.map((accident, idx) => (
+          <MissingRow key={idx} accident={accident} />
+        ))}
         <div className="pb-[300px]" />
       </div>
     </main>
