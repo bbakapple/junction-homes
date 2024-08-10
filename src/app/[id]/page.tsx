@@ -12,19 +12,12 @@ interface Props {
 }
 
 export default function TeatPage({ params: { id } }: Props) {
-  const {
-    caseNumber,
-    missingPerson,
-    location,
-    estimatedLocation,
-    missingTime,
-    caseStatus,
-    captured,
-  } = missingAccidents[id]
+  const missingAccident = missingAccidents[id]
+
   return (
     <div className="size-full relative">
       <Image src={MapInmage} alt="지도" fill className="size-full object-cover" />
-      <CapturedPoint captures={captured} />
+      <CapturedPoint captures={missingAccident.captured} />
 
       <div className="absolute z-50 left-[442px] top-[32px] bg-white py-[20px] rounded-[12px] w-[calc(100%-484px)]">
         <div>
@@ -39,15 +32,15 @@ export default function TeatPage({ params: { id } }: Props) {
           <div className="border-[0.8px] border-[#D5D5D5] mt-[4px]" />
         </div>
 
-        <div className="flex text-body-regular-14 text-nowrap items-center pt-[8px]">
-          <div className="w-[120px] pl-[24px]">
-            <AccidentStatus status={caseStatus} />
+        <div className="flex text-body-regular-14 text-nowrap items-center mt-[12px]">
+          <div className="pl-[24px] w-[120px]">
+            <AccidentStatus status={missingAccident.caseStatus} />
           </div>
-          <div className="flex-1 line-clamp-1">{location}</div>
-          <div className="flex-1 line-clamp-1">{missingPerson.signalment.join(', ')}</div>
-          <div className="flex-1 pr-[60px] line-clamp-1">{estimatedLocation}</div>
-          <div className="w-[234px]">
-            <GoldenTime date={missingTime} isDone={caseStatus === 'done'} />
+          <div className="flex-1 line-clamp-1">{missingAccident.location}</div>
+          <div className="flex-1 line-clamp-1">{missingAccident.missingPerson.signalment.join(', ')}</div>
+          <div className="flex-1 pr-[60px] line-clamp-1">{missingAccident.estimatedLocation}</div>
+          <div className="w-[234px] pr-[24px]">
+            <GoldenTime date={missingAccident.missingTime} isDone={missingAccident.caseStatus === 'done'} />
           </div>
         </div>
       </div>

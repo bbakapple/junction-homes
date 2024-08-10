@@ -2,6 +2,7 @@ import { cn } from '@/utils/cn'
 import { HTMLAttributes } from 'react'
 import { Logo } from './icon/svg-components'
 import Icon from './icon'
+import Link from 'next/link'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
@@ -13,7 +14,9 @@ export const Sidebar = ({ className }: Props) => {
         className,
       )}
     >
-      <Logo className="absolute right-1/2 translate-x-1/2 top-[48px]" />
+      <Link href='/'>
+        <Logo className="absolute right-1/2 translate-x-1/2 top-[48px]" />
+      </Link>
       <div className="flex flex-col justify-between h-full pb-[83px] pt-[208px]">
         <div className="flex flex-col items-center gap-[12px] text-white">
           <div className="w-[58px] h-[63px] rounded-[12px] flex-center">
