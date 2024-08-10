@@ -11,6 +11,12 @@ const config: Config = {
       pretendard: ['Pretendard', 'sans-serif'],
     },
     fontSize: {
+      'title-bold-24': [
+        '24px',
+        {
+          fontWeight: '700',
+        },
+      ],
       'title-bold-20': [
         '20px',
         {
