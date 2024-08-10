@@ -7,6 +7,11 @@ export interface Capture {
   imageUrl: string
   time: Date
   coordinate: Coordinate
+  accuracy: number,
+  gps: {
+    latitude: number, 
+    longitude: number
+  }
 }
 
 export interface MissingPerson {
