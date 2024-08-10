@@ -1,25 +1,27 @@
 import { Capture } from '@/app/types'
 import { cn } from '@/utils/cn'
 import dayjs from 'dayjs'
-import Image from 'next/image'
 import { HTMLAttributes } from 'react'
 import { PopOver } from '../pop-over'
-import bigImage from '@/assets/images/정우_1.png'
 import ZoomImage from '../zoom-image'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
+  isEven: boolean
   capture: Capture
   isTop?: boolean
 }
 
 export const CaptureInfoBigCard = ({
   className,
+  isEven,
   capture: { imageUrl, time, gps, accuracy },
   isTop,
 }: Props) => {
   return (
     <PopOver className={cn(className, 'text-white', 'w-[450px]')}>
-      <ZoomImage className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')} src={bigImage} width={450} height={450 * 288 / 549} targetX={-48} targetY={130} maxZoom={3} duration={1500}/>
+      {isEven ? 
+      <ZoomImage className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')} src={imageUrl} width={450} height={450 * 288 / 549} targetX={-48} targetY={130} maxZoom={3} duration={1500}/> : 
+      <ZoomImage className={cn('rounded-t-[10px]', 'border-gray-6', 'border-[3px]', 'object-cover')} src={imageUrl} width={450} height={450 * 288 / 549} targetX={123} targetY={130} maxZoom={3} duration={1500}/>}
       <div
         className={cn(
           'bg-[#202224cc]',

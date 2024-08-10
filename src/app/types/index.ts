@@ -4,6 +4,7 @@ export interface Coordinate {
 }
 
 export interface Capture {
+  thumbnail: string
   imageUrl: string
   time: Date
   coordinate: Coordinate

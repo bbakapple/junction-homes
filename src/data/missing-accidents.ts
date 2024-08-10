@@ -8,11 +8,12 @@ export const missingAccidents: MissingAccidentList = [
     estimatedLocation: '125-6, Jangryang-dong, Buk-gu',
     captured: [
       {
-        imageUrl: '/images/정우_small_1.png',
+        thumbnail: '/images/정우_small_1.png',
+        imageUrl: '/images/정우_7.png',
         time: new Date('2024-08-09T11:00:00+09:00'), // 11:00 AM KST
         coordinate: {
-          x: 30,
-          y: 50,
+          x: 35,
+          y: 30,
         },
         gps: {
           latitude: 36.01917,
@@ -21,11 +22,12 @@ export const missingAccidents: MissingAccidentList = [
         accuracy: 96.5,
       },
       {
-        imageUrl: '/images/정우_small_3.png',
+        thumbnail: '/images/정우_small_3.png',
+        imageUrl: '/images/정우_7.png',
         time: new Date('2024-08-09T11:30:00+09:00'), // 11:30 AM KST
         coordinate: {
-          x: 55,
-          y: 70,
+          x: 30,
+          y: 45,
         },
         gps: {
           latitude: 36.0201,
@@ -34,11 +36,12 @@ export const missingAccidents: MissingAccidentList = [
         accuracy: 95.7,
       },
       {
-        imageUrl: '/images/정우_small_2.png',
+        thumbnail: '/images/정우_small_2.png',
+        imageUrl: '/images/정우_7.png',
         time: new Date('2024-08-09T12:00:00+09:00'), // 12:00 AM KST
         coordinate: {
-          x: 55,
-          y: 70,
+          x: 65,
+          y: 65,
         },
         gps: {
           latitude: 36.0201,
@@ -69,10 +72,11 @@ export const missingAccidents: MissingAccidentList = [
     estimatedLocation: '58-80, Daejam-dong, Nam-gu',
     captured: [
       {
-        imageUrl: '/images/박도윤_small_1.png',
+        thumbnail: '/images/박도윤_small_1.png',
+        imageUrl: '/images/도윤_1.png',
         time: new Date('2024-08-10T14:45:00+09:00'), // 2:45 PM KST
         coordinate: {
-          x: 25,
+          x: 70,
           y: 45,
         },
         gps: {
@@ -82,11 +86,12 @@ export const missingAccidents: MissingAccidentList = [
         accuracy: 98.1,
       },
       {
-        imageUrl: '/images/도윤_small_2.png',
+        thumbnail: '/images/도윤_small_2.png',
+        imageUrl: '/images/도윤_1.png',
         time: new Date('2024-08-10T15:15:00+09:00'), // 3:15 PM KST
         coordinate: {
           x: 45,
-          y: 65,
+          y: 60,
         },
         gps: {
           latitude: 35.97821,

@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 export const CaptureInfoSmallCard = ({
   className,
-  capture: { imageUrl, time, accuracy },
+  capture: { thumbnail, time, accuracy },
   isTop,
 }: Props) => {
   return (
@@ -38,7 +38,7 @@ export const CaptureInfoSmallCard = ({
             'overflow-hidden',
           ])}
         >
-          <Image src={imageUrl} alt="" fill />
+          <Image src={thumbnail} alt="" fill />
         </div>
         <div
           className={cn(
