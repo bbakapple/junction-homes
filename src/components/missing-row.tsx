@@ -49,7 +49,7 @@ export const MissingRow = ({accident}: Props) => {
           <div className="flex-1 line-clamp-1">{missingPerson.signalment.join(', ')}</div>
           <div className="flex-1 pr-[60px] line-clamp-1">{estimatedLocation}</div>
           <div className="w-[234px]">
-            <GoldenTime date={missingTime} />
+            <GoldenTime date={missingTime} isDone={caseStatus === 'done'}/>
           </div>
         </div>
       </div>
