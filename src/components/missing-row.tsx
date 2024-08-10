@@ -3,6 +3,7 @@ import { AccidentStatus } from './accident-status'
 import { GoldenTime } from './golden-time'
 import { MissingAccident } from '@/app/types'
 import Link from 'next/link'
+import { cn } from '@/utils/cn'
 
 interface Props {
   id: number
@@ -14,8 +15,11 @@ export const MissingRow = ({ id, accident }: Props) => {
     accident
   return (
     <Link
-      href={`/${id}`}
-      className="py-[26px] rounded-[12px] shadow-detail flex gap-[41px] overflow-hidden"
+      href={caseStatus !=='done' ?  `/${id}`: '/'}
+      className={cn(
+        'py-[26px] rounded-[12px] flex gap-[41px] overflow-hidden',
+        caseStatus === 'done' ? 'opacity-70 bg-gray-1' : 'shadow-detail',
+      )}
     >
       <div className="flex gap-[17px] *:h-[70px] pl-[20px] *:shrink-0">
         {/* IMAGE */}
