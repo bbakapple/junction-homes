@@ -14,11 +14,13 @@ export function getGoldenTime(
   const msSecond = 1000
 
   const hours = Math.floor(diff / msHour)
-  const minutes = Math.floor(((diff % msHour) / 60) * msSecond)
+  const minutes = Math.floor((diff % msHour) / msMin)
   const seconds = Math.floor((diff % msMin) / msSecond)
 
   if (options.fullDeploy) {
-    return `${hours}시간 ${minutes}분 ${seconds}초`
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`
   } else {
     if (hours > 0) {
       return `${hours}시간`
