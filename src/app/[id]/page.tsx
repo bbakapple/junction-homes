@@ -12,11 +12,12 @@ interface Props {
 }
 
 export default function TeatPage({ params: { id } }: Props) {
-  const points = missingAccidents[id].captured
+  const missingAccident = missingAccidents[id]
+
   return (
     <div className="size-full relative">
       <Image src={MapInmage} alt="지도" fill className="size-full object-cover" />
-      <CapturedPoint captures={points} />
+      <CapturedPoint captures={missingAccident.captured} />
 
       <div className="absolute z-50 left-[442px] top-[32px] bg-white py-[20px] rounded-[12px] w-[calc(100%-484px)]">
         <div>
@@ -33,13 +34,13 @@ export default function TeatPage({ params: { id } }: Props) {
 
         <div className="flex text-body-regular-14 text-nowrap items-center mt-[12px]">
           <div className="pl-[24px] w-[120px]">
-            <AccidentStatus status="yet" />
+            <AccidentStatus status={missingAccident.caseStatus} />
           </div>
-          <div className="flex-1 line-clamp-1">77, Cheongam-ro, Hyogok-dong</div>
-          <div className="flex-1 line-clamp-1">Black T-shirts & Pants</div>
-          <div className="flex-1 pr-[60px] line-clamp-1">11, Hyoja-ro 32beon-gil, Nam-gu</div>
+          <div className="flex-1 line-clamp-1">{missingAccident.location}</div>
+          <div className="flex-1 line-clamp-1">{missingAccident.missingPerson.signalment.join(', ')}</div>
+          <div className="flex-1 pr-[60px] line-clamp-1">{missingAccident.estimatedLocation}</div>
           <div className="w-[234px] pr-[24px]">
-            <GoldenTime date={new Date('2024-08-13')} />
+            <GoldenTime date={missingAccident.missingTime} isDone={missingAccident.caseStatus === 'done'} />
           </div>
         </div>
       </div>
