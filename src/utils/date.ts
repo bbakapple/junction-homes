@@ -18,9 +18,7 @@ export function getGoldenTime(
   const seconds = Math.floor((diff % msMin) / msSecond)
 
   if (options.fullDeploy) {
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds
-      .toString()
-      .padStart(2, '0')}`
+    return `${hours}시간 ${minutes}분 ${seconds}초`
   } else {
     if (hours > 0) {
       return `${hours}시간`
