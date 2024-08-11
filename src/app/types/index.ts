@@ -4,12 +4,13 @@ export interface Coordinate {
 }
 
 export interface Capture {
+  thumbnail: string
   imageUrl: string
   time: Date
   coordinate: Coordinate
-  accuracy: number,
+  accuracy: number
   gps: {
-    latitude: number, 
+    latitude: number
     longitude: number
   }
 }
@@ -17,14 +18,14 @@ export interface Capture {
 export interface MissingPerson {
   name: string
   imageUrl: string
-  age: number,
-  gender: string,
+  age: number
+  gender: string
   signalment: string[]
   disability?: string
   physicalFeature?: string
 }
 
-export type CaseStatus = 'notStart' | 'progress' | 'done'
+export type CaseStatus = 'doing' | 'yet' | 'done'
 
 export interface Police {
   name: string
@@ -33,13 +34,14 @@ export interface Police {
 }
 
 export interface MissingAccident {
-  caseNumber: number
+  caseNumber: string
   missingTime: Date
   location: string
   captured: Capture[]
   missingPerson: MissingPerson
   caseStatus: CaseStatus
   charge: Police | null
+  estimatedLocation: string
 }
 
 export type MissingAccidentList = MissingAccident[]
