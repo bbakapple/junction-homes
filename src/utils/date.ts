@@ -9,6 +9,8 @@ export function getGoldenTime(
   const now = new Date()
   const diff = date.getTime() - now.getTime()
 
+  if (diff < 0) return '00:00:00'
+
   const msHour = 3600 * 1000
   const msMin = 60 * 1000
   const msSecond = 1000
@@ -18,7 +20,9 @@ export function getGoldenTime(
   const seconds = Math.floor((diff % msMin) / msSecond)
 
   if (options.fullDeploy) {
-    return `${hours}시간 ${minutes}분 ${seconds}초`
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`
   } else {
     if (hours > 0) {
       return `${hours}시간`
