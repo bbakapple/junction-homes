@@ -15,7 +15,7 @@ export default function TeatPage({ params: { id } }: Props) {
 
   return (
     <div className="size-full relative">
-      <Image src='/assets/map.png' alt="지도" fill className="size-full object-cover" />
+      <Image src="/assets/map.png" alt="지도" fill className="size-full object-cover" />
       <CapturedPoint captures={missingAccident.captured} />
 
       <div className="absolute z-50 left-[442px] top-[32px] bg-white py-[20px] rounded-[12px] w-[calc(100%-484px)]">

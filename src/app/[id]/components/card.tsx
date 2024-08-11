@@ -1,12 +1,14 @@
 import { MissingAccident } from '@/app/types'
 import { AccidentStatus } from '@/components/accident-status'
+import { missingAccidents } from '@/data/missing-accidents'
 import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
 
 interface Props {
   id: number
-  accident: MissingAccident
+  // accident: MissingAccident
+  accident: (typeof missingAccidents)[number]
 }
 
 export const Card = ({ id, accident }: Props) => {
