@@ -4,7 +4,7 @@ const capturedTemplate1 = [
   {
     thumbnail: '/images/정우_small_1.png',
     imageUrl: '/images/정우_7.png',
-    time: new Date('2024-08-09T11:00:00+09:00'), // 11:00 AM KST
+    time: new Date('2024-08-09T11:00:00+09:00'),
     coordinate: {
       x: 35,
       y: 30,
