@@ -1,4 +1,3 @@
-import { MissingAccident } from '@/app/types'
 import { AccidentStatus } from '@/components/accident-status'
 import { missingAccidents } from '@/data/missing-accidents'
 import { cn } from '@/utils/cn'
@@ -19,7 +18,7 @@ export const Card = ({ id, accident }: Props) => {
       className={cn(
         'rounded-[12px] px-[20px] py-[28px] bg-white shadow-card ml-[35px] mr-[30px] relative',
         accident.charge && 'pb-[13px]',
-        accident.caseStatus === 'done' ? 'opacity-70 bg-gray-1' : 'shadow-detail',
+        accident.caseStatus === 'done' ? 'opacity-70 bg-gray-1' : 'shadow-detail'
       )}
     >
       <div className="flex gap-[17px] *:h-[70px]">
