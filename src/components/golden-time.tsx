@@ -34,7 +34,7 @@ export const GoldenTime = ({ className, date, isDone }: Props) => {
     const intervalId = setInterval(updateTime, 1000)
 
     return () => clearInterval(intervalId)
-  }, [date])
+  }, [date, isDone, isFinish])
 
   return (
     <div className={cn(className)}>
