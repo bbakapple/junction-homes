@@ -1,5 +1,3 @@
-import { hostname } from 'os'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -12,6 +10,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.pixabay.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'd2wm5j67hrdrdj.amplifyapp.com',
         port: '',
       },
     ],
